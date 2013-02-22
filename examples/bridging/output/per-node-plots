@@ -1,0 +1,13 @@
+data=load("xxx_metrics_per_node_xxx")
+
+CTtree: hist(data(:,7),[0:1:15])
+CTnode: hist(max(data(:,7+1:7+1+63)),[0:1:15])
+
+MOtree: hist(data(:,7+1+64),[A:B:C])
+MOnode: hist(sum(data(:,7+1+64+1:7+1+64+1+63)),[A:B:C])
+
+MOtreeConf: hist(data(:,7+1+64+1+64),[A:B:C])
+MOnodeConf: hist(sum(data(:,7+1+64+1+64+1:7+1+64+1+64+63)),[A:B:C])
+
+TRtree: hist(data(:,7+1+64+1+64+1+64),[A:B:C])
+TRnode: hist(sum(data(:,7+1+64+1+64+1+64+1:7+1+64+1+64+1+64+63)),[A:B:C])

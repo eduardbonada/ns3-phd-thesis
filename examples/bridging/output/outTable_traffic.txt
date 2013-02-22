@@ -1,0 +1,8 @@
+# Nod:   Number of nodes
+# NGi:   Number of generated packets per second during interval i
+# NRi:   Number of received packets per second during interval i
+# Li:    Length in seconds of interval i
+# R4/R3: Ratio between received packets in intervals 3 and 4 (measure of network partition)
+# R5/R3: Ratio between received packets in intervals 3 and 5 (measure of old/new topologies similarity)
+
+#Nod	NG1	NR1	L1	NG2	NR2	L2	NG3	NR3	L3	NG4	NR4	L4	NG5	NR5	L5	NG6	NR6	L6	NG7	NR7	L7	R4/R3	R5/R3

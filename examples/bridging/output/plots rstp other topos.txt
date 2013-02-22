@@ -1,0 +1,104 @@
+#############################################
+
+ct_g4=load("avg_ct_g4.txt")
+[s,i]=sort(ct_g4(:,1))
+ct_g4=ct_g4(i,:)
+
+ct_g8=load("avg_ct_g8.txt")
+[s,i]=sort(ct_g8(:,1))
+ct_g8=ct_g8(i,:)
+
+#ct_light=load("avg_ct_light.txt")
+#[s,i]=sort(ct_light(:,1))
+#ct_light=ct_light(i,:)
+
+ct_heavy=load("avg_ct_heavy.txt")
+[s,i]=sort(ct_heavy(:,1))
+ct_heavy=ct_heavy(i,:)
+
+#ct_full=load("avg_ct_full.txt")
+#[s,i]=sort(ct_full(:,1))
+#ct_full=ct_full(i,:)
+
+ct_tt=load("avg_ct_twotier.txt")
+[s,i]=sort(ct_tt(:,1))
+ct_tt=ct_tt(i,:)
+
+#############################################
+
+mo_g4=load("avg_mo_g4.txt")
+[s,i]=sort(mo_g4(:,1))
+mo_g4=mo_g4(i,:)
+
+mo_g8=load("avg_mo_g8.txt")
+[s,i]=sort(mo_g8(:,1))
+mo_g8=mo_g8(i,:)
+
+#mo_light=load("avg_mo_light.txt")
+#[s,i]=sort(mo_light(:,1))
+#mo_light=mo_light(i,:)
+
+mo_heavy=load("avg_mo_heavy.txt")
+[s,i]=sort(mo_heavy(:,1))
+mo_heavy=mo_heavy(i,:)
+
+#mo_full=load("avg_mo_full.txt")
+#[s,i]=sort(mo_full(:,1))
+#mo_full=mo_full(i,:)
+
+mo_tt=load("avg_mo_twotier.txt")
+[s,i]=sort(mo_tt(:,1))
+mo_tt=mo_tt(i,:)
+
+#############################################
+
+# x-axis is num nodes
+hold off
+plot(ct_g4(:,1),ct_g4(:,3),"r;g4;")
+hold on
+plot(ct_g8(:,1),ct_g8(:,3),"b;g8;")
+#plot(ct_light(:,1),ct_light(:,3),"y;light;")
+plot(ct_heavy(:,1),ct_heavy(:,3),"c;heavy;")
+#plot(ct_full(:,1),ct_full(:,3),"g;full;")
+#plot(ct_tt(:,1),ct_tt(:,3),"k;twotier;")
+xlabel("Number of Nodes")
+ylabel("CT in deadlocks")
+
+# x-axis is degree
+hold off
+plot(ct_g4(:,2)./ct_g4(:,1),ct_g4(:,3),"r;g4;")
+hold on
+plot(ct_g8(:,2)./ct_g8(:,1),ct_g8(:,3),"b;g8;")
+#plot(ct_light(:,2)./ct_light(:,1),ct_light(:,3),"y;light;")
+plot(ct_heavy(:,2)./ct_heavy(:,1),ct_heavy(:,3),"c;heavy;")
+#plot(ct_full(:,2)./ct_full(:,1),ct_full(:,3),"g;full;")
+#plot(ct_tt(:,2)./ct_tt(:,1),ct_tt(:,3),"k;twotier;")
+xlabel("Node Degree")
+ylabel("CT in deadlocks")
+
+#############################################
+
+# x-axis is num nodes
+hold off
+plot(mo_g4(:,1),mo_g4(:,3)./mo_g4(:,1),"r;g4;")
+hold on
+plot(mo_g8(:,1),mo_g8(:,3)./mo_g8(:,1),"b;g8;")
+#plot(mo_light(:,1),mo_light(:,3)./mo_light(:,1),"y;light;")
+plot(mo_heavy(:,1),mo_heavy(:,3)./mo_heavy(:,1),"c;heavy;")
+#plot(mo_full(:,1),mo_full(:,3)./mo_full(:,1),"g;full;")
+#plot(mo_tt(:,1),mo_tt(:,3)./mo_tt(:,1),"k;twotier;")
+xlabel("Number of Nodes")
+ylabel("MO per node")
+
+# x-axis is degree
+hold off
+plot(mo_g4(:,2)./mo_g4(:,1),mo_g4(:,3)./mo_g4(:,1),"r;g4;")
+hold on
+plot(mo_g8(:,2)./mo_g8(:,1),mo_g8(:,3)./mo_g8(:,1),"b;g8;")
+#plot(mo_light(:,2)./mo_light(:,1),mo_light(:,3)./mo_light(:,1),"y;light;")
+plot(mo_heavy(:,2)./mo_heavy(:,1),mo_heavy(:,3)./mo_heavy(:,1),"c;heavy;")
+#plot(mo_full(:,2)./mo_full(:,1),mo_full(:,3)./mo_full(:,1),"g;full;")
+#plot(mo_tt(:,2)./mo_tt(:,1),mo_tt(:,3)./mo_tt(:,1),"k;twotier;")
+xlabel("Node Degree")
+ylabel("MO per node")
+

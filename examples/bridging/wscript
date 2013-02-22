@@ -1,0 +1,21 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    ##obj = bld.create_ns3_program('csma-bridge-test', ['bridge','csma', 'internet-stack'])
+    ##obj.source = 'csma-bridge-test.cc'
+ 
+    ##obj = bld.create_ns3_program('only-csma-bridges-test', ['bridge','csma', 'internet-stack'])
+    ##obj.source = 'only-csma-bridges-test.cc'
+    
+    ##obj = bld.create_ns3_program('ptp-bridges-test', ['bridge','eth-point-to-point'])
+    ##obj.source = 'ptp-bridges-test.cc'
+   
+    ##obj = bld.create_ns3_program('ptp-3bridges-test', ['bridge','eth-point-to-point'])
+    ##obj.source = 'ptp-3bridges-test.cc' 
+    
+    #obj = bld.create_ns3_program('ptp-grid-bridges', ['bridge','eth-point-to-point'])
+    #obj.source = 'ptp-grid-bridges.cc' 
+    
+    obj = bld.create_ns3_program('ptp-grid-bridges-traff', ['bridge','eth-point-to-point'])
+    obj.source = 'ptp-grid-bridges-traff.cc' 
+    
